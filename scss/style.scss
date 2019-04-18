@@ -1,31 +1,3 @@
-$brand-color: #F76C00;
-$dark-grey: #313541;
-$light-grey: #86939E;
-$blue-color: #4BA8F5;
-
-$h1-fontsize: 60px;
-$h2-fontsize: 42px;
-$h3-fontsize: 32px;
-$cloud-grey: #E1E8EE;
-
-body { padding-bottom: 120px; }
-
-h1 { font-size: $h1-fontsize; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0px; }
-h2 { font-size: $h2-fontsize; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0 0 40px 0; }
-h3 { font-size: $h3-fontsize; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0 0 24px 0; }
-p { font-size: 18px; line-height: 34px; margin:0px; }
-hr { margin: 0; }
-ul { margin: 0; padding: 0; font-size: 18px; line-height: 34px; list-style: none; }
-ul li::before {
-  content: "\2022";
-  color: $blue-color; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
-// h3 { font-size: $h3-fontsize; font-weight: 500; margin:0px; overflow:visible; padding:0px; }
-
 @mixin respond-to($breakpoint) {
   @if $breakpoint == "desktop-w-xl" {
     @media (min-width: 1600px) {
@@ -33,33 +5,106 @@ ul li::before {
     }
   }
   @else if $breakpoint == "desktop-w-normal" {
-    @media (min-width: 1441px) {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "desktop-w-s" {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "tablet-w" {
+    @media (min-width: 768px) {
       @content;
     }
   }
 }
 
+body { padding-bottom: 120px;
+  @include respond-to(tablet-w) { background: yellow; }
+  @include respond-to(desktop-w-s) { background: purple; }
+  @include respond-to(desktop-w-normal) { background: blue; }
+  @include respond-to(desktop-w-xl) { background: tomato; }
+  // @include respond-to(tablet-w) {  }
+  // @include respond-to(desktop-w-s) {  }
+  // @include respond-to(desktop-w-normal) {  }
+  // @include respond-to(desktop-w-xl) {  }
+}
+
+$blue-color: #4BA8F5;
+$light-grey: #86939E;
+$cloud-grey: #E1E8EE;
+
+h1 { font-size: 34px; line-height: 42px; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0px;
+  @include respond-to(tablet-w)  { font-size: 42px; line-height: 48px; }
+  @include respond-to(desktop-w-s)  { font-size: 42px; line-height: 48px; }
+  @include respond-to(desktop-w-normal)  { font-size: 60px; line-height: 68px; }
+  @include respond-to(desktop-w-xl)  { font-size: 96px; line-height: 106px; }
+}
+h2 { font-size: 42px; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0 0 40px 0; }
+h3 { font-size: 32px; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0 0 24px 0; }
+p { font-size: 18px; line-height: 34px; margin:0px; }
+hr { margin: 0; }
+ul { margin: 0; padding: 0; font-size: 18px; line-height: 34px; list-style: none; }
+ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; }
+
 .top-header { display: flex; justify-content: center; position: absolute; width: 100vw; top:0px;
-  .navigation { position: absolute; width: 100%; /*max-width:1920px;*/ padding: 40px;
-    .wf-logo { width: 232px; height: 27px; }
+  .navigation { position: absolute; width: 100%; /*max-width:1920px;*/ padding: 24px 20px;
+    @include respond-to(tablet-w) { padding: 40px 30px; }
+    @include respond-to(desktop-w-s) { padding: 40px 40px; }
+    @include respond-to(desktop-w-normal) { padding: 40px 40px; }
+    @include respond-to(desktop-w-xl) { padding: 40px 40px; }
+    .wf-logo { width: 123px; height: 18px;
+      @include respond-to(tablet-w) { width: 246px; height: 36px; }
+    }
   }
 }
 
-.header { display: flex; justify-content: center; position: relative; background: #86939E; width: 100vw; height: 650px;
-  .case-study { position: relative; width: 900px; padding-top: 200px; color: #fff;
-    p { font-size: 21px; line-height: 36px; padding: 32px 0 48px; }
-    .work-spec { position: relative; padding-top: 56px; font-size: 18px; line-height: 40px;
-      #workType { background: #FFEA01; padding:8px; color: #000; font-weight: 700; }
+.header { display: flex; justify-content: center; position: relative; background: $light-grey; width: 100vw;
+  .case-study { position: relative; width: 100%; padding: 96px 20px 56px; color: #fff;
+    @include respond-to(tablet-w) { width: 100%; padding: 184px 32px 72px; }
+    @include respond-to(desktop-w-s) { width: 792px; padding: 184px 0 128px; }
+    @include respond-to(desktop-w-normal) { width: 900px; padding: 192px 0 136px; }
+    @include respond-to(desktop-w-xl) { width: 910px; padding: 232px 0 160px; }
+    p { font-size: 14px; line-height: 21px; padding: 20px 0 24px;
+      @include respond-to(tablet-w)  { font-size: 18px; line-height: 36px; padding: 32px 0 40px; }
+      @include respond-to(desktop-w-s)  { font-size: 18px; line-height: 36px; padding: 32px 0 40px; }
+      @include respond-to(desktop-w-normal)  { font-size: 21px; line-height: 36px; padding: 32px 0 48px; }
+      @include respond-to(desktop-w-xl)  { font-size: 24px; line-height: 36px; padding: 48px 0 56px; }
+    }
+    .work-spec { display: flex; flex-direction: column; position: relative; padding-top: 32px; font-size: 14px; line-height: 21px;
+      @include respond-to(tablet-w) { line-height: 40px; padding-top: 48px; }
+      @include respond-to(desktop-w-normal) { font-size: 18px; padding-top: 56px; }
+      @include respond-to(tablet-w) { flex-direction: row; }
+      #workType { position: relative; background: #FFEA01; width: 83px; padding:6px; color: #000; font-weight: 700;
+          @include respond-to(tablet-w) { padding:0px 6px; }
+          @include respond-to(desktop-w-normal) { width: 104px; }
+      }
+      .mdash { position: relative; display: none;
+        @include respond-to(tablet-w) { display: block; padding: 0 8px; }
+        @include respond-to(desktop-w-xl) { padding: 0 12px; }
+      }
+      #workSpec { padding-top: 8px;
+        @include respond-to(tablet-w) { padding-top: 0px; }
+      }
     }
   }
 }
 
 .container { display: flex; flex-direction: column; align-items: center; position: relative; padding-top: 96px;
   .c-standard { position: relative; width: 700px; padding-bottom: 96px; }
+  .c-split { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: relative; width: 900px; height: 440px;
+    .c-split-content { position: relative; width: 420px; }
+    .c-split-img { position: relative; width: 440px; height: 440px; background: $cloud-grey; }
+  }
+  .c-img-split { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: relative; width: 900px; height: 506px;
+    .c-img { position: relative; width: 430px; height: 506px; background: $cloud-grey; }
+  }
   .img { position: relative; background: #E1E8EE; width: 900px; height: 506px; }
   .caption { position: relative; width: 460px; font-size: 16px; color: $blue-color; padding-top: 16px; padding-bottom:96px; }
-  .spacer { height: 96px; }
-  .img-list { padding-bottom: 96px;
+  .spacer { position: relative; height: 96px; }
+  .img-list { position: relative; padding-bottom: 96px;
     ul { width: 1912px; height: 506px; margin:0; padding: 0px;
       li { display: flex; justify-content: center; align-items: center; background: $cloud-grey; width: 422px; height: 506px; list-style: none; float: left; margin: 0 28px; border-radius: 0px; box-shadow: 0 16px 8px -12px rgba(0, 0, 0, 0.0); }
       li::before { display:none; }

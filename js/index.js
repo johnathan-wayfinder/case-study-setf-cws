@@ -33,7 +33,7 @@ function setCopy() {
   client.innerHTML = 'Southeast Toyota Finance';
   workSummary.innerHTML = 'We collaborated with SETF to evolve the website into a gateway to create a relationship with its customers through targeted communication based on profile type (retail or lease).';
   workType.innerHTML = 'Case Study';
-  workSpec.innerHTML = '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;UX/UI Design, Information Architecture, Content Strategy';
+  workSpec.innerHTML = 'UX/UI Design, Information Architecture, Content Strategy';
 }
 
 setCopy();
