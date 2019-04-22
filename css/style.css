@@ -111,6 +111,80 @@ ul li::before {
       width: 1em;
       margin-left: -1em; } }
 
+.wf-grid {
+  position: absolute;
+  width: 100vw;
+  top: 0px;
+  opacity: 0.04; }
+  .wf-grid .grid-line {
+    position: absolute;
+    background: #000;
+    width: 1px;
+    height: 100%; }
+  .wf-grid .wf-grid-left-out {
+    display: none; }
+    @media (min-width: 1280px) {
+      .wf-grid .wf-grid-left-out {
+        display: block;
+        left: 50%;
+        margin-left: -620px; } }
+    @media (min-width: 1440px) {
+      .wf-grid .wf-grid-left-out {
+        margin-left: -700px; } }
+    @media (min-width: 1600px) {
+      .wf-grid .wf-grid-left-out {
+        margin-left: -940px; } }
+  .wf-grid .wf-grid-left-mid {
+    left: 0px;
+    margin-left: 10px; }
+    @media (min-width: 768px) {
+      .wf-grid .wf-grid-left-mid {
+        left: 0px;
+        margin-left: 15px; } }
+    @media (min-width: 1280px) {
+      .wf-grid .wf-grid-left-mid {
+        left: 50%;
+        margin-left: -304px; } }
+    @media (min-width: 1440px) {
+      .wf-grid .wf-grid-left-mid {
+        margin-left: -344px; } }
+    @media (min-width: 1600px) {
+      .wf-grid .wf-grid-left-mid {
+        margin-left: -464px; } }
+  .wf-grid .wf-grid-center {
+    left: 50%;
+    margin-left: -.5px; }
+  .wf-grid .wf-grid-right-mid {
+    right: 0px;
+    margin-right: 10px; }
+    @media (min-width: 768px) {
+      .wf-grid .wf-grid-right-mid {
+        right: 0px;
+        margin-right: 15px; } }
+    @media (min-width: 1280px) {
+      .wf-grid .wf-grid-right-mid {
+        right: 50%;
+        margin-right: -304px; } }
+    @media (min-width: 1440px) {
+      .wf-grid .wf-grid-right-mid {
+        margin-right: -344px; } }
+    @media (min-width: 1600px) {
+      .wf-grid .wf-grid-right-mid {
+        margin-right: -464px; } }
+  .wf-grid .wf-grid-right-out {
+    display: none; }
+    @media (min-width: 1280px) {
+      .wf-grid .wf-grid-right-out {
+        display: block;
+        right: 50%;
+        margin-right: -620px; } }
+    @media (min-width: 1440px) {
+      .wf-grid .wf-grid-right-out {
+        margin-right: -700px; } }
+    @media (min-width: 1600px) {
+      .wf-grid .wf-grid-right-out {
+        margin-right: -940px; } }
+
 .top-header {
   display: flex;
   justify-content: center;

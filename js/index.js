@@ -29,6 +29,13 @@ var d = document;
 //   TweenLite.to('.nav-bg', 1.2, { display:'block', autoAlpha:0, ease:Expo.easeOut });
 // }
 
+var bodyYHeight = document.body.clientHeight;
+wfGridHeight = bodyYHeight + 320;
+// console.log(bodyYHeight);
+
+TweenLite.set(['.wf-grid-center', '.wf-grid-left-out', '.wf-grid-left-mid', '.wf-grid-right-mid', '.wf-grid-right-out'], { height: wfGridHeight });
+
+
 function setCopy() {
   client.innerHTML = 'Southeast Toyota Finance';
   workSummary.innerHTML = 'We collaborated with SETF to evolve the website into a gateway to create a relationship with its customers through targeted communication based on profile type (retail or lease).';
