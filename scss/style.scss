@@ -21,8 +21,8 @@
   }
 }
 
-body { padding-bottom: 60px;
-  @include respond-to(tablet-w) { /*background: yellow;*/ padding-bottom: 120px; }
+body {
+  @include respond-to(tablet-w) { /*background: yellow;*/ }
   // @include respond-to(desktop-w-s) { background: orange; }
   // @include respond-to(desktop-w-normal) { background: blue; }
   // @include respond-to(desktop-w-xl) { background: tomato; }
@@ -35,6 +35,7 @@ body { padding-bottom: 60px;
 $blue-color: #4BA8F5;
 $light-grey: #86939E;
 $cloud-grey: #E1E8EE;
+$wf-red: #ef4f53;
 
 h1 { font-size: 34px; line-height: 42px; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0px;
   @include respond-to(tablet-w)  { font-size: 42px; line-height: 48px; }
@@ -48,6 +49,9 @@ h2 { font-size: 28px; font-family: "Replica-Bold", sans-serif !important; font-w
 }
 h3 { font-size: 21px; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0 0 20px 0;
   @include respond-to(tablet-w)  { font-size: 32px; padding:0 0 24px 0; }
+}
+h4 { font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin:0px; overflow:visible; padding:20px 0;
+  @include respond-to(tablet-w)  { font-size: 26px; padding:24px 0; }
 }
 p { font-size: 14px; line-height: 24px; margin:0px;
   @include respond-to(tablet-w) { font-size: 16px; line-height: 28px; }
@@ -66,7 +70,7 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   @include respond-to(tablet-w) { width: 1em; margin-left: -1em; }
 }
 
-.wf-grid { position: absolute; width: 100vw; top:0px; opacity: 0.04;
+.wf-grid { position: absolute; width: 100vw; top:0px; opacity: 0.06;
   .grid-line { position: absolute; background: #000; width: 1px; height: 100%; }
   .wf-grid-left-out { display: none;
     @include respond-to(tablet-w) { }
@@ -95,8 +99,8 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   }
 }
 
-.top-header { display: flex; justify-content: center; position: absolute; width: 100vw; top:0px;
-  .navigation { position: absolute; width: 100%; /*max-width:1920px;*/ padding: 24px 20px;
+.top-header { display: flex; justify-content: center; position: fixed; width: 100vw; top:0px;
+  .navigation { position: relative; width: 100%; /*max-width:1920px;*/ padding: 24px 20px;
     @include respond-to(tablet-w) { padding: 40px 30px; }
     @include respond-to(desktop-w-s) { padding: 40px 40px; }
     @include respond-to(desktop-w-normal) { padding: 40px 40px; }
@@ -105,9 +109,41 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
       @include respond-to(tablet-w) { width: 246px; height: 36px; }
     }
   }
+  .menu { display: none;
+    @include respond-to(tablet-w) { display: block; padding: 40px 40px; }
+    ul { display: flex; flex-direction: row; margin: 0; padding: 0; font-size: 16px; font-weight: 500; color: #fff; list-style: none;
+      // @include respond-to(tablet-w) { font-size: 16px; line-height: 28px; }
+      // @include respond-to(desktop-w-s) { line-height: 34px; }
+      // @include respond-to(desktop-w-normal) { font-size: 18px; }
+      // @include respond-to(desktop-w-xl) { font-size: 21px; }
+      li { margin-left: 40px; cursor: pointer; }
+    }
+    ul li::before { display: none; }
+    ul li:hover { border-bottom: 3px solid; }
+    // .link-active { border-bottom: 3px solid; }
+  }
+  .menu-hamburger { padding: 22px 20px;
+    @include respond-to(tablet-w) { display: none; }
+  }
+  .mobile-close { display: none; position: absolute; background: url(../img/close-icon.svg) no-repeat; background-size: contain; background-position: center center; width: 14px; height: 14px; right: 0px; margin: 25px 20px;}
 }
 
-.header { display: flex; justify-content: center; position: relative; background: $light-grey; width: 100vw;
+.mobile-menu { display: none; position: fixed; top: 0px; background: $wf-red; width: 100%; height: 100%;
+  @include respond-to(tablet-w) { display: none; }
+  .menu { display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; width: 100%; height: 100%;
+    ul { margin: 0; padding: 0; font-family: "Replica-Bold", sans-serif !important; font-size: 52px; font-weight: 500; color: #fff; list-style: none;
+      // @include respond-to(tablet-w) { font-size: 16px; line-height: 28px; }
+      // @include respond-to(desktop-w-s) { line-height: 34px; }
+      // @include respond-to(desktop-w-normal) { font-size: 18px; }
+      // @include respond-to(desktop-w-xl) { font-size: 21px; }
+      li { margin: 80px 0; text-align: center; cursor: pointer; }
+    }
+    ul li::before { display: none; }
+    //.link-active { border-bottom: 3px solid; }
+  }
+}
+
+.header { display: flex; justify-content: center; position: relative; /*background: $light-grey;*/ background: url(../img/hero.jpg) no-repeat; background-size: cover; background-position: center center; width: 100vw;
   .case-study { position: relative; width: 100%; padding: 96px 20px 56px; color: #fff;
     @include respond-to(tablet-w) { width: 100%; padding: 184px 32px 72px; }
     @include respond-to(desktop-w-s) { width: 792px; padding: 184px 0 128px; }
@@ -195,6 +231,9 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   .spacer { position: relative; height: 40px;
     @include respond-to(tablet-w)  { height: 96px; }
   }
+  .spacer-small { position: relative; height: 0px;
+    @include respond-to(tablet-w)  { height: 8px; }
+  }
   .img-list { position: relative; padding-bottom: 40px;
     @include respond-to(tablet-w)  { padding-bottom: 96px; }
     ul { display: flex; height: 188px; margin:0; padding: 0px;
@@ -216,5 +255,38 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   }
   .mobile-display-none { display: none !important;
     @include respond-to(desktop-w-s) { display: block !important; }
+  }
+  .p-tp { padding-top: 16px;
+    @include respond-to(tablet-w) { padding-top: 24px; }
+    @include respond-to(desktop-w-normal) { padding-top: 32px; }
+  }
+  .img-challenge { background: url(../img/challenge.jpg) no-repeat; background-size: cover; background-position: center top; /*box-shadow: 0 0 32px 0 rgba(0,0,0,0.16);*/ }
+  .challenge-list-1 { background: url(../img/challenge-img-list-1.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .challenge-list-2 { background: url(../img/challenge-img-list-2.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .challenge-list-3 { background: url(../img/challenge-img-list-3.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .challenge-list-4 { background: url(../img/challenge-img-list-4.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .img-strategy { background: url(../img/strategy.jpg) no-repeat; background-size: cover; background-position: center top; }
+  .img-global-themes { background: url(../img/global-themes.jpg) no-repeat !important; background-size: contain !important; background-position: center top !important;
+    @include respond-to(tablet-w) { border: none; background-size: cover !important; }
+  }
+  .img-solution-w-1 { background: url(../img/solution-wireframe1.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .img-solution-w-2 { background: url(../img/solution-wireframe2.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .img-results-homepage { background: url(../img/results-homepage.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .img-results-register { background: url(../img/results-register.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .img-results-vehicle-detail { background: url(../img/results-vehicle.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  .img-results-help-center { background: url(../img/results-help.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
+  // E1E8EE
+
+  .img-effect {
+    // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
+    border: 2px solid #E1E8EE;
+  }
+}
+
+.work-with-us { display: flex; flex-direction: column; align-items: center; position: relative; background: #f1f1ef; width: 100vw; height: 280px;
+  .btn { position: relative; background: transparent; background-image: url(../img/arrow-btn-contact.svg) no-repeat; background-size: .5em; background-position: 98% 10%; width: 192px; margin-top: 80px; border: 4px solid #444; padding: 13px 0; color: #444; text-align: center; font-weight: 700; letter-spacing: .5px; }
+  .p-tp { padding-top: 16px;
+    @include respond-to(tablet-w) { padding-top: 24px; }
+    @include respond-to(desktop-w-normal) { padding-top: 32px; }
   }
 }

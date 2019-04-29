@@ -1,36 +1,63 @@
-var d = document;
-  // trackers = document.getElementById('getStartedBG');
+var d = document,
+  wfbody = document.getElementsByTagName("BODY")[0];
+  //trackers = document.getElementById('getStartedBG');
 
-// window.addEventListener('scroll',function(){
-//   if ( window.pageYOffset > 100 ){
-//     navigationCollaped();
-//   }
-//   else {
-//     navigationExpanded();
-//   }
-//   if ( window.pageYOffset > 400 ){
-//     tl.pause();
-//   }
-//   else {
-//     tl.resume();
-//   }
-//   //trackers.innerText = window.pageYOffset+' '+window.scrollTop;
-// });
+window.addEventListener('scroll',function(){
 
-// function navigationCollaped() {
-//   TweenLite.to('.menu', 1.2, { y:-24, ease:Expo.easeOut });
-//   TweenLite.to('.efl-logo', 1.2, { transformOrigin:'top left', scale:.68, y:-24, ease:Expo.easeOut });
-//   TweenLite.to('.nav-bg', 1.2, { display:'block', autoAlpha:1, ease:Expo.easeOut });
-// }
-//
-// function navigationExpanded() {
-//   TweenLite.to('.menu', 1.2, { y:0, ease:Expo.easeOut });
-//   TweenLite.to('.efl-logo', 1.2, { transformOrigin:'top left', scale:1, y:0, ease:Expo.easeOut });
-//   TweenLite.to('.nav-bg', 1.2, { display:'block', autoAlpha:0, ease:Expo.easeOut });
-// }
+  if ( window.innerWidth >= 1600 ) {
+    if ( window.pageYOffset > 854 ) {
+      TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+    }
+    else {
+      TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+    }
+  } else if ( window.innerWidth >= 1440 ) {
+    if ( window.pageYOffset > 590 ){
+      TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+    }
+    else {
+      TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+    }
+  } else if ( window.innerWidth >= 1280 ) {
+    if ( window.pageYOffset > 540 ){
+      TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+    }
+    else {
+      TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+    }
+  } else if ( window.innerWidth >= 768 ) {
+    if ( window.pageYOffset > 518 ){
+      TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+    }
+    else {
+      TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+    }
+  } else {
+    if ( window.pageYOffset >= 460 ){
+      TweenLite.to('.wf-logo-color', .4, { fill:'#121212', ease:Expo.easeOut });
+      TweenLite.to('.hamburger-color', .4, { fill:'#121212', ease:Expo.easeOut });
+      TweenLite.to('.top-header', .4, { background: 'rgba(255,255,255,.85)' });
+    }
+    else {
+      TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.hamburger-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.top-header', .4, { background: 'rgba(255,255,255,.0)' });
+    }
+  }
+  console.log(window.pageYOffset+' '+window.scrollTop);
+  //trackers.innerText = window.pageYOffset+' '+window.scrollTop;
+});
 
 var bodyYHeight = document.body.clientHeight;
-wfGridHeight = bodyYHeight + 320;
+wfGridHeight = bodyYHeight + 136;//320
 // console.log(bodyYHeight);
 
 TweenLite.set(['.wf-grid-center', '.wf-grid-left-out', '.wf-grid-left-mid', '.wf-grid-right-mid', '.wf-grid-right-out'], { height: wfGridHeight });
@@ -38,9 +65,49 @@ TweenLite.set(['.wf-grid-center', '.wf-grid-left-out', '.wf-grid-left-mid', '.wf
 
 function setCopy() {
   client.innerHTML = 'Southeast Toyota Finance';
-  workSummary.innerHTML = 'We collaborated with SETF to evolve the website into a gateway to create a relationship with its customers through targeted communication based on profile type (retail or lease).';
+  workSummary.innerHTML = 'We collaborated with Southeast Toyota Finance (SETF) to evolve its payment-focused website into a platform to create deeper and longer-lasting relationships with its customers.';
   workType.innerHTML = 'Case Study';
   workSpec.innerHTML = 'UX/UI Design, Information Architecture, Content Strategy';
+}
+
+function initMobileMenu() {
+  TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+  TweenLite.to('.hamburger-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
+  TweenLite.to('.top-header', .2, { background: 'rgba(255,255,255,.0)' });
+  TweenLite.to('.menu-hamburger', .2, { autoAlpha:0, ease:Expo.eaeOut });
+  TweenLite.fromTo(['.mobile-menu', '.mobile-close'], .2, { display: 'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.eaeOut });
+  TweenLite.set(wfbody, { overflow: 'hidden' });
+}
+
+function closeMobileMenu() {
+  if ( window.pageYOffset >= 460 ){
+    TweenLite.to('.wf-logo-color', .4, { fill:'#121212', ease:Expo.easeOut });
+    TweenLite.to('.hamburger-color', .4, { fill:'#121212', ease:Expo.easeOut });
+    TweenLite.to('.top-header', .2, { background: 'rgba(255,255,255,.85)' });
+  }
+  TweenLite.to('.menu-hamburger', .2, { autoAlpha:1, ease:Expo.eaeOut });
+  TweenLite.to(['.mobile-menu', '.mobile-close'], .2, { autoAlpha:0, ease:Expo.eaeOut });
+  TweenLite.set(wfbody, { overflow: 'visible' });
+}
+
+function openHome() {
+  var url = 'https://wayfinder-ux.com/';
+  window.open(url, '_blank');
+}
+
+function openAbout() {
+  var url = 'https://wayfinder-ux.com/#/about';
+  window.open(url, '_blank');
+}
+
+function openWork() {
+  var url = 'https://wayfinder-ux.com/#/work';
+  window.open(url, '_blank');
+}
+
+function openContact() {
+  var url = 'https://wayfinder-ux.com/#/contact';
+  window.open(url, '_blank');
 }
 
 setCopy();
