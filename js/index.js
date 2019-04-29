@@ -90,6 +90,15 @@ function closeMobileMenu() {
   TweenLite.set(wfbody, { overflow: 'visible' });
 }
 
+function btnWorkWithUsOver() {
+  TweenLite.to('.btn', .2, { backgroundColor:'#444', color:'#fff', ease:Expo.easeOut });
+}
+
+function btnWorkWithUsOut() {
+  TweenLite.to('.btn', .2, { backgroundColor:'transparent', color:'#444', ease:Expo.easeOut });
+
+}
+
 function openHome() {
   var url = 'https://wayfinder-ux.com/';
   window.open(url, '_blank');
