@@ -2,42 +2,6 @@
   body {
     /*background: yellow;*/ } }
 
-.cursor {
-  --size: 10px;
-  height: var(--size);
-  width: var(--size);
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  transform: translate(-50%, -50%);
-  pointer-events: none; }
-
-.cursor.cursor-shadow {
-  background: #FF5252;
-  transition: top .25s, left .25s, width .5s, height .5s, background .35s;
-  transition-timing-function: ease-out; }
-
-.cursor.cursor-shadow2 {
-  background: #FF5252;
-  transition: top .50s, left .50s, width .10s, height .10s, background .70s;
-  transition-timing-function: ease-out; }
-
-.cursor.cursor-dot {
-  background: #444;
-  transition: width .25s, height .25s; }
-
-.cursor-shadow.active {
-  --size: 80px;
-  z-index: -1;
-  /*   transition:all 0.2s ease; */ }
-
-.cursor-shadow2.active {
-  --size: 0px;
-  /*   transition:all 0.2s ease; */ }
-
-.cursor-dot.active {
-  --size: 0; }
-
 h1 {
   font-size: 34px;
   line-height: 42px;
@@ -265,6 +229,10 @@ ul li::before {
   .top-header .menu {
     display: none; }
     @media (min-width: 768px) {
+      .top-header .menu {
+        display: block;
+        padding: 40px 30px; } }
+    @media (min-width: 1280px) {
       .top-header .menu {
         display: block;
         padding: 40px 40px; } }
@@ -551,6 +519,7 @@ ul li::before {
           height: 536px; } }
   .container .img {
     position: relative;
+    overflow: hidden;
     background: #E1E8EE;
     width: 100%;
     height: 188px; }
@@ -572,6 +541,7 @@ ul li::before {
         height: 512px; } }
   .container .img-full-w {
     position: relative;
+    overflow: hidden;
     background: #E1E8EE;
     width: 112%;
     height: 210px; }
@@ -727,11 +697,12 @@ ul li::before {
     @media (min-width: 1440px) {
       .container .p-tp {
         padding-top: 32px; } }
-  .container .img-challenge {
-    background: url(../img/challenge.jpg) no-repeat;
+  .container .img-progress {
+    background: url(../img/progress.jpg) no-repeat;
     background-size: cover;
-    background-position: center top;
-    /*box-shadow: 0 0 32px 0 rgba(0,0,0,0.16);*/ }
+    background-position: center top; }
+  .container .setf-screenshot {
+    position: absolute; }
   .container .challenge-list-1 {
     background: url(../img/challenge-img-list-1.jpg) no-repeat !important;
     background-size: cover !important;
@@ -760,6 +731,10 @@ ul li::before {
       .container .img-global-themes {
         border: none;
         background-size: cover !important; } }
+  .container .img-solution {
+    background: url(../img/solution-saskia.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center; }
   .container .img-solution-w-1 {
     background: url(../img/solution-wireframe1.jpg) no-repeat !important;
     background-size: cover !important;
