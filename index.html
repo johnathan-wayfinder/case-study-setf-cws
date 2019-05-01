@@ -203,7 +203,7 @@
   </div>
 
   <div class="work-with-us">
-    <div class="btn" onmouseover="btnWorkWithUsOver()" onmouseout="btnWorkWithUsOut()">WORK WITH US</div>
+    <div class="btn cursor-go link">WORK WITH US</div><!--onmouseover="btnWorkWithUsOver()" onmouseout="btnWorkWithUsOut()"-->
     <h4 class="p-tp">LET'S CREATE SOMETHING TOGETHER</h3>
   </div>
 
@@ -228,7 +228,7 @@
 
   <div class="top-header">
     <div class="navigation">
-      <div class="wf-logo" onclick="openHome()">
+      <div class="wf-logo cursor-color cursor-scale link" onclick="openHome()">
         <svg version="1.1" id="Layer_1" x="0px" y="0px"
         viewBox="0 0 275 31" style="enable-background:new 0 0 275 31;" xml:space="preserve">
         <style type="text/css">
@@ -263,9 +263,9 @@
     </div>
     <div class="menu">
       <ul>
-        <li onclick="openAbout()">about</li>
-        <li class="link-active" onclick="openWork()">work</li>
-        <li onclick="openContact()">contact</li>
+        <li class="cursor-scale cursor-color link" onclick="openAbout()">about</li>
+        <li class="link-active cursor-scale cursor-color link" onclick="openWork()">work</li>
+        <li class="cursor-scale cursor-color link" onclick="openContact()">contact</li>
       </ul>
     </div>
     <div class="menu-hamburger" onclick="initMobileMenu()">
@@ -280,8 +280,18 @@
     <div class="mobile-close" onclick="closeMobileMenu()"></div>
   </div>
 
+  <!-- <div id="cursor" class="cursor">
+      <span class="dot"></span>
+      <div class="go">GO</div>
+  </div> -->
 
+  <div class="cursor cursor-shadow"></div>
+  <div class="cursor cursor-shadow2"></div>
+  <div class="cursor cursor-dot"></div>
+
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/cursor2.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 
 </body>

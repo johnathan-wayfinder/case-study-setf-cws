@@ -38,6 +38,46 @@ $light-grey: #86939E;
 $cloud-grey: #E1E8EE;
 $wf-red: #ef4f53;
 
+// #cursor{ pointer-events: none; /* IMPORTANT */ }
+//
+// .cursor{ width: var(--cursor-rad); height: var(--cursor-rad); border-radius: 50%; position: absolute; transform: translate(-50%, -50%); }
+//
+// .cursor .dot{ width: 100%; height: 100%; border-radius: 50%; background-color: #FF5252; display: block; transition-property: transform, background-color; transition-duration: var(--duration); transition-timing-function: ease-in; }
+//
+// .cursor .go{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 16px; font-weight: bold; -webkit-user-select: none; user-select: none; visibility: hidden; opacity: 0; transition-duration: var(--duration); }
+//
+// /** CURSOR EFFECT **/
+// .cursor.scale .dot{ transform: scale(2); }
+//
+// .cursor.color .dot{ background-color: #FF5252; }
+//
+// .cursor.go .dot{ transform: scale(2.4); }
+//
+// .cursor.go .go{ visibility: visible; opacity: 1; }
+//
+// /** ELEMENTS EFFECT **/
+// [class*=cursor-]{ transition: all ease var(--duration); -webkit-user-select: none; user-select: none; }
+//
+// // [class*=cursor-]:hover{ opacity: .7; }
+
+
+
+.cursor { --size: 10px; height: var(--size); width:  var(--size); border-radius: 50%; position: absolute; z-index: 2; transform: translate(-50%, -50%); pointer-events: none; }
+
+.cursor.cursor-shadow { background: #FF5252; transition: top .25s, left .25s, width .5s, height .5s, background .35s; transition-timing-function: ease-out; }
+
+.cursor.cursor-shadow2 { background: #FF5252; transition: top .50s, left .50s, width .10s, height .10s, background .70s; transition-timing-function: ease-out; }
+
+.cursor.cursor-dot { background: #444; transition: width .25s, height .25s; }
+
+.cursor-shadow.active { --size: 80px; z-index: -1; /*   transition:all 0.2s ease; */ }
+
+.cursor-shadow2.active { --size: 0px; /*   transition:all 0.2s ease; */ }
+
+.cursor-dot.active { --size: 0; }
+
+
+
 h1 { font-size: 34px; line-height: 42px; font-family: "Replica-Bold", sans-serif !important; font-weight: 700; margin:0px; overflow:visible; padding:0px;
   @include respond-to(tablet-w)  { font-size: 42px; line-height: 48px; }
   @include respond-to(desktop-w-s)  { font-size: 42px; line-height: 48px; }
@@ -286,8 +326,8 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   // E1E8EE
 
   .img-effect {
-    // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
-    border: 2px solid #E1E8EE;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
+    // border: 2px solid #E1E8EE;
   }
 }
 

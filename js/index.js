@@ -8,28 +8,34 @@ window.addEventListener('scroll',function(){
     if ( window.pageYOffset > 854 ) {
       TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
       TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.cursor .dot', .4, { backgroundColor:'#ef4f53' });
     }
     else {
       TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
       TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.cursor .dot', .4, { backgroundColor:'#fff' });
     }
   } else if ( window.innerWidth >= 1440 ) {
     if ( window.pageYOffset > 590 ){
       TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
       TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.cursor .dot', .4, { backgroundColor:'#ef4f53' });
     }
     else {
       TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
       TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.cursor .dot', .4, { backgroundColor:'#fff' });
     }
   } else if ( window.innerWidth >= 1280 ) {
     if ( window.pageYOffset > 540 ){
       TweenLite.to('.wf-logo-color', .4, { fill:'#444444', ease:Expo.easeOut });
       TweenLite.to('.menu ul', .4, { color:'#444444', ease:Expo.easeOut });
+      TweenLite.to('.cursor .dot', .4, { backgroundColor:'#ef4f53' });
     }
     else {
       TweenLite.to('.wf-logo-color', .4, { fill:'#ffffff', ease:Expo.easeOut });
       TweenLite.to('.menu ul', .4, { color:'#ffffff', ease:Expo.easeOut });
+      TweenLite.to('.cursor .dot', .4, { backgroundColor:'#fff' });
     }
   } else if ( window.innerWidth >= 768 ) {
     if ( window.pageYOffset > 518 ){
