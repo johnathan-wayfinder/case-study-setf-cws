@@ -34,6 +34,7 @@ body {
 
 $blue-color: #4BA8F5;
 $coral-color: #FF8A80;
+$findyourway-color: #FF5252;
 $light-grey: #86939E;
 $cloud-grey: #E1E8EE;
 $wf-red: #ef4f53;
@@ -107,6 +108,10 @@ ul { margin: 0; padding: 0; font-size: 14px; line-height: 24px; list-style: none
   @include respond-to(desktop-w-normal) { font-size: 18px; }
   @include respond-to(desktop-w-xl) { font-size: 21px; }
 }
+ul li { margin-bottom: 20px;
+  @include respond-to(desktop-w-s) { margin-bottom: 16px; }
+  @include respond-to(desktop-w-normal) { margin-bottom: 20px; }
+}
 ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display: inline-block; width: .8em; margin-left: -.8em;
   @include respond-to(tablet-w) { width: 1em; margin-left: -1em; }
 }
@@ -162,7 +167,7 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
     }
     ul li::before { display: none; }
     ul li:hover { border-bottom: 3px solid; }
-    // .link-active { border-bottom: 3px solid; }
+    .link-active { border-bottom: 3px solid; }
   }
   .menu-hamburger { padding: 22px 20px;
     @include respond-to(tablet-w) { display: none; }
@@ -274,8 +279,8 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
       @include respond-to(tablet-w) { padding-left: 0px; padding-right: 0px; }
     }
   }
-  .caption-copy { position: relative; width: 100%; font-size: 12px; color: $coral-color; padding-top: 8px; padding-bottom:40px;
-    @include respond-to(tablet-w) { width: 56%; font-size: 16px; padding-top: 16px; padding-bottom:96px; }
+  .caption-copy { position: relative; width: 100%; font-size: 12px; color: $findyourway-color; padding-top: 12px; padding-bottom:40px;
+    @include respond-to(tablet-w) { width: 72%; font-size: 16px; padding-top: 20px; padding-bottom:96px; line-height: 24px; }
   }
   .spacer { position: relative; height: 40px;
     @include respond-to(tablet-w)  { height: 96px; }
@@ -311,12 +316,12 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   }
   .img-progress { background: url(../img/progress.jpg) no-repeat; background-size: cover; background-position: center top; }
   // .img-challenge { width: 100%; height: auto; background: url(../img/setf-live-screenshot.jpg) no-repeat; background-size: cover; }
-  .setf-screenshot { position: absolute; }
+  .setf-screenshot, .setf-sketch, .setf-sketch-nav { position: absolute; }
   .challenge-list-1 { background: url(../img/challenge-img-list-1.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
   .challenge-list-2 { background: url(../img/challenge-img-list-2.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
   .challenge-list-3 { background: url(../img/challenge-img-list-3.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
   .challenge-list-4 { background: url(../img/challenge-img-list-4.jpg) no-repeat !important; background-size: cover !important; background-position: center top !important; }
-  .img-strategy { background: url(../img/strategy.jpg) no-repeat; background-size: cover; background-position: center top; }
+  // .img-strategy { background: url(../img/strategy.jpg) no-repeat; background-size: cover; background-position: center top; }
   .img-global-themes { background: url(../img/global-themes.jpg) no-repeat !important; background-size: contain !important; background-position: center top !important;
     @include respond-to(tablet-w) { border: none; background-size: cover !important; }
   }
@@ -330,7 +335,7 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   // E1E8EE
 
   .img-effect {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.16);
     // border: 2px solid #E1E8EE;
   }
 }
