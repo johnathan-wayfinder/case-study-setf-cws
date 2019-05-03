@@ -282,7 +282,7 @@ ul li::before {
     right: 0px;
     margin: 25px 20px; }
 
-.copywrite {
+.copyrite {
   position: fixed;
   bottom: 13px;
   right: 10.5px;
@@ -291,20 +291,20 @@ ul li::before {
   transform: translateY(85%) rotate(90deg);
   transform-origin: bottom right; }
   @media (min-width: 768px) {
-    .copywrite {
+    .copyrite {
       transform: none;
       bottom: 0px;
       right: 0px;
       font-size: 14px;
       padding: 16px 30px; } }
   @media (min-width: 1280px) {
-    .copywrite {
+    .copyrite {
       padding: 16px 40px; } }
   @media (min-width: 1440px) {
-    .copywrite {
+    .copyrite {
       padding: 16px 40px; } }
   @media (min-width: 1600px) {
-    .copywrite {
+    .copyrite {
       padding: 16px 40px; } }
 
 .mobile-menu {

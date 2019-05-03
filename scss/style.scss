@@ -175,7 +175,7 @@ ul li::before { content: "\2022"; color: $blue-color; font-weight: bold; display
   .mobile-close { display: none; position: absolute; background: url(../img/close-icon.svg) no-repeat; background-size: contain; background-position: center center; width: 14px; height: 14px; right: 0px; margin: 25px 20px;}
 }
 
-.copywrite { position: fixed; bottom: 13px; right: 10.5px; font-size: 9px; opacity: .8; transform: translateY(85%) rotate(90deg); transform-origin: bottom right;
+.copyrite { position: fixed; bottom: 13px; right: 10.5px; font-size: 9px; opacity: .8; transform: translateY(85%) rotate(90deg); transform-origin: bottom right;
   @include respond-to(tablet-w) { transform: none; bottom: 0px; right: 0px; font-size: 14px; padding: 16px 30px; }
   @include respond-to(desktop-w-s) { padding: 16px 40px; }
   @include respond-to(desktop-w-normal) { padding: 16px 40px; }
