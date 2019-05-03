@@ -1,6 +1,8 @@
-@media (min-width: 768px) {
-  body {
-    /*background: yellow;*/ } }
+body {
+  overflow-x: hidden; }
+  @media (min-width: 768px) {
+    body {
+      /*background: yellow;*/ } }
 
 h1 {
   font-size: 34px;
@@ -131,8 +133,9 @@ ul li::before {
       margin-left: -1em; } }
 
 .wf-grid {
-  position: absolute;
+  position: fixed;
   width: 100vw;
+  height: 100%;
   top: 0px;
   opacity: 0.06; }
   .wf-grid .grid-line {
@@ -278,6 +281,31 @@ ul li::before {
     height: 14px;
     right: 0px;
     margin: 25px 20px; }
+
+.copywrite {
+  position: fixed;
+  bottom: 13px;
+  right: 10.5px;
+  font-size: 9px;
+  opacity: .8;
+  transform: translateY(85%) rotate(90deg);
+  transform-origin: bottom right; }
+  @media (min-width: 768px) {
+    .copywrite {
+      transform: none;
+      bottom: 0px;
+      right: 0px;
+      font-size: 14px;
+      padding: 16px 30px; } }
+  @media (min-width: 1280px) {
+    .copywrite {
+      padding: 16px 40px; } }
+  @media (min-width: 1440px) {
+    .copywrite {
+      padding: 16px 40px; } }
+  @media (min-width: 1600px) {
+    .copywrite {
+      padding: 16px 40px; } }
 
 .mobile-menu {
   display: none;

@@ -82,7 +82,7 @@ window.addEventListener('scroll',function(){
       TweenLite.to('.top-header', .4, { background: 'rgba(255,255,255,0)' });
     }
   }
-  // console.log(window.pageYOffset+' '+window.scrollTop);
+  //console.log(window.pageYOffset+' '+window.scrollTop);
   //trackers.innerText = window.pageYOffset+' '+window.scrollTop;
 });
 
