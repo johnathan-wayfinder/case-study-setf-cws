@@ -600,6 +600,24 @@ ul li::before {
       .container .img-full-w {
         width: 910px;
         height: 512px; } }
+  .container .img-plus-mobile-height {
+    height: 280px; }
+    @media (min-width: 768px) {
+      .container .img-plus-mobile-height {
+        width: 100%;
+        height: 396px; } }
+    @media (min-width: 1280px) {
+      .container .img-plus-mobile-height {
+        width: 794px;
+        height: 447px; } }
+    @media (min-width: 1440px) {
+      .container .img-plus-mobile-height {
+        width: 900px;
+        height: 506px; } }
+    @media (min-width: 1600px) {
+      .container .img-plus-mobile-height {
+        width: 910px;
+        height: 512px; } }
   .container .caption {
     position: relative;
     width: 100%; }
